@@ -22,18 +22,16 @@
         }
 
         .container {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             max-width: 1200px;
             width: 100%;
-            flex-wrap: wrap;
             justify-content: center;
+            margin: 0 auto;
         }
 
         .banner {
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             overflow: hidden;
@@ -162,12 +160,35 @@
             }
         }
 
+        /* Greyed out card for upcoming projects */
+        .banner.upcoming {
+            opacity: 0.6;
+            cursor: not-allowed;
+            pointer-events: none;
+            background: rgba(200, 200, 200, 0.95);
+        }
+
+        .banner.upcoming .banner-header {
+            background: linear-gradient(135deg, #a0a0a0 0%, #808080 100%);
+        }
+
+        .banner.upcoming .launch-label {
+            color: #808080;
+        }
+
+        .banner.upcoming .status {
+            color: #808080;
+        }
+
+        .banner.upcoming .status-dot {
+            background: #808080;
+            animation: none;
+        }
+
         @media (max-width: 768px) {
             .container {
-                flex-direction: column;
-            }
-            .banner {
-                max-width: 100%;
+                grid-template-columns: 1fr;
+                padding: 0 20px;
             }
         }
     </style>
@@ -266,6 +287,7 @@
                 </div>
             </div>
         </a>
+
         <!-- Project 4: Map Whisper -->
         <a href="https://www.loom.com/share/c1c8c9b74c3543859a1eb03d73168f1d" class="banner" target="_blank">
             <div class="banner-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
@@ -274,11 +296,11 @@
             </div>
             <div class="banner-content">
                 <p class="banner-description">
-                    Voice-enabled AI mapping assistant that lets you naturally converse with maps for intuitive navigation and exploration.
+                    AI mapping assistant that lets you use natural query with maps for intuitive navigation and exploration.
                 </p>
                 <div class="banner-tech">
-                    <span class="tech-tag">Voice AI</span>
-                    <span class="tech-tag">Conversational UI</span>
+                    <span class="tech-tag">AI</span>
+                    <span class="tech-tag">Natural Language</span>
                     <span class="tech-tag">Maps</span>
                 </div>
                 <div class="banner-footer">
@@ -296,6 +318,64 @@
                 </div>
             </div>
         </a>
+
+        <!-- Project 5: New Project (Under Development) -->
+        <div class="banner upcoming">
+            <div class="banner-header">
+                <h2 class="banner-title">New Project</h2>
+                <p class="banner-subtitle">Under Development</p>
+            </div>
+            <div class="banner-content">
+                <p class="banner-description">
+                    New project is under way 
+                </p>
+                <div class="banner-tech">
+                    <span class="tech-tag">Coming Soon</span>
+                </div>
+                <div class="banner-footer">
+                    <span class="launch-label">
+                        Under Development
+                        <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </span>
+                    <div class="status">
+                        <span class="status-dot"></span>
+                        <span>In Progress</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 6: New Project (Under Development) -->
+        <div class="banner upcoming">
+            <div class="banner-header">
+                <h2 class="banner-title">New Project</h2>
+                <p class="banner-subtitle">Under Development</p>
+            </div>
+            <div class="banner-content">
+                <p class="banner-description">
+                    New project is under way 
+                </p>
+                <div class="banner-tech">
+                    <span class="tech-tag">Coming Soon</span>
+                </div>
+                <div class="banner-footer">
+                    <span class="launch-label">
+                        Under Development
+                        <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </span>
+                    <div class="status">
+                        <span class="status-dot"></span>
+                        <span>In Progress</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
